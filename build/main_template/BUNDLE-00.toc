@@ -1,0 +1,4 @@
+([('main_template',
+   '/Users/brandonhannan/Documents/Little Alchemist/Little Alchemist '
+   'Repository/LittleAlchemistAnalyst/dist/main_template',
+   'EXECUTABLE')],)
