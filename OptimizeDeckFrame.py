@@ -21,9 +21,10 @@ _ = gettext.gettext
 class OptimizeDeckFrame ( wx.Frame ):
 
     def __init__( self, parent ):
-        wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = _(u"Little Alchemist Analyst"), pos = wx.DefaultPosition, size = wx.Size( 800,700 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MINIMIZE_BOX|wx.TAB_TRAVERSAL )
+        wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = _(u"Little Alchemist Analyst"), pos = wx.DefaultPosition, size = wx.Size( 875,700 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MINIMIZE_BOX|wx.TAB_TRAVERSAL )
 
         self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
+        self.SetBackgroundColour( wx.Colour( 191, 113, 223 ) )
 
         bSizer16 = wx.BoxSizer( wx.VERTICAL )
 
@@ -31,7 +32,7 @@ class OptimizeDeckFrame ( wx.Frame ):
 
         bSizer2.SetMinSize( wx.Size( -1,50 ) )
 
-        bSizer2.Add( ( 300, 0), 0, wx.EXPAND, 5 )
+        bSizer2.Add( ( 350, 0), 0, wx.EXPAND, 5 )
 
         self.card_library_button = wx.Button( self, wx.ID_ANY, _(u"Card Library"), wx.DefaultPosition, wx.DefaultSize, 0 )
         bSizer2.Add( self.card_library_button, 0, wx.ALL, 5 )
@@ -48,12 +49,13 @@ class OptimizeDeckFrame ( wx.Frame ):
         bSizer18 = wx.BoxSizer( wx.HORIZONTAL )
 
 
-        bSizer18.Add( ( 400, 0), 0, wx.EXPAND, 5 )
+        bSizer18.Add( ( 450, 0), 0, wx.EXPAND, 5 )
 
         self.m_staticText10 = wx.StaticText( self, wx.ID_ANY, _(u"Optimize Deck"), wx.DefaultPosition, wx.DefaultSize, 0 )
         self.m_staticText10.Wrap( -1 )
 
         self.m_staticText10.SetFont( wx.Font( 19, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
+        self.m_staticText10.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNTEXT ) )
 
         bSizer18.Add( self.m_staticText10, 0, wx.ALL, 5 )
 
@@ -64,7 +66,7 @@ class OptimizeDeckFrame ( wx.Frame ):
 
         bSizer13.SetMinSize( wx.Size( -1,150 ) )
 
-        bSizer13.Add( ( 310, 0), 0, wx.EXPAND, 5 )
+        bSizer13.Add( ( 360, 0), 0, wx.EXPAND, 5 )
 
         self.deck_1_button = wx.Button( self, wx.ID_ANY, _(u"Deck 1"), wx.DefaultPosition, wx.DefaultSize, 0 )
         bSizer13.Add( self.deck_1_button, 0, wx.ALL, 5 )
@@ -86,6 +88,8 @@ class OptimizeDeckFrame ( wx.Frame ):
         self.m_staticText11 = wx.StaticText( self, wx.ID_ANY, _(u"Mode:"), wx.DefaultPosition, wx.DefaultSize, 0 )
         self.m_staticText11.Wrap( -1 )
 
+        self.m_staticText11.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNTEXT ) )
+
         bSizer14.Add( self.m_staticText11, 0, wx.ALL, 5 )
 
         mode_choiceChoices = []
@@ -95,6 +99,8 @@ class OptimizeDeckFrame ( wx.Frame ):
 
         self.m_staticText12 = wx.StaticText( self, wx.ID_ANY, _(u"Custom (%):"), wx.DefaultPosition, wx.DefaultSize, 0 )
         self.m_staticText12.Wrap( -1 )
+
+        self.m_staticText12.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNTEXT ) )
 
         bSizer14.Add( self.m_staticText12, 0, wx.ALL, 5 )
 
@@ -125,6 +131,8 @@ class OptimizeDeckFrame ( wx.Frame ):
         self.m_staticText13 = wx.StaticText( self, wx.ID_ANY, _(u"Add Card:"), wx.DefaultPosition, wx.DefaultSize, 0 )
         self.m_staticText13.Wrap( -1 )
 
+        self.m_staticText13.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNTEXT ) )
+
         bSizer15.Add( self.m_staticText13, 0, wx.ALL, 5 )
 
         add_card_choiceChoices = []
@@ -139,6 +147,8 @@ class OptimizeDeckFrame ( wx.Frame ):
 
         self.m_staticText14 = wx.StaticText( self, wx.ID_ANY, _(u"Delete Card:"), wx.DefaultPosition, wx.DefaultSize, 0 )
         self.m_staticText14.Wrap( -1 )
+
+        self.m_staticText14.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNTEXT ) )
 
         bSizer15.Add( self.m_staticText14, 0, wx.ALL, 5 )
 
@@ -164,6 +174,8 @@ class OptimizeDeckFrame ( wx.Frame ):
         self.deck_summary_txt = wx.StaticText( self, wx.ID_ANY, _(u"Deck Summary:"), wx.DefaultPosition, wx.Size( 100,-1 ), 0 )
         self.deck_summary_txt.Wrap( -1 )
 
+        self.deck_summary_txt.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNTEXT ) )
+
         bSizer17.Add( self.deck_summary_txt, 0, wx.ALL, 5 )
 
         self.clear_deck_button = wx.Button( self, wx.ID_ANY, _(u"Clear Deck"), wx.DefaultPosition, wx.DefaultSize, 0 )
@@ -174,6 +186,8 @@ class OptimizeDeckFrame ( wx.Frame ):
 
         self.deck_stats_txt = wx.StaticText( self, wx.ID_ANY, _(u"Deck Statistics:"), wx.DefaultPosition, wx.DefaultSize, 0 )
         self.deck_stats_txt.Wrap( -1 )
+
+        self.deck_stats_txt.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNTEXT ) )
 
         bSizer17.Add( self.deck_stats_txt, 0, wx.ALL, 5 )
 

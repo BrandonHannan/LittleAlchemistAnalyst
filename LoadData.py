@@ -1,3 +1,5 @@
+import copy
+
 import pandas as pd
 import os
 import csv
@@ -105,15 +107,11 @@ def add_onyx_combos(combo_card_names, combo_cards):
             defense = defense + 4
         combo_cards[onyx_name] = ComboCard(attack, defense, 5)
         combo_cards[onyx_name].setCombinations(combo_cards[card_names[i]].combinations)
-        names_list = list(combo_cards[card_names[i]].combinations.keys())
-        result_list = list(combo_cards[card_names[i]].combinations.values())
+        names_list = copy.deepcopy(list(combo_cards[card_names[i]].combinations.keys()))
+        result_list = copy.deepcopy(list(combo_cards[card_names[i]].combinations.values()))
         for j in range(0, len(names_list)):
             x = names_list[j] + ":Onyx"
             combo_cards[card_names[i]].addCombo(x, result_list[j])
-        names_list = list(combo_cards[onyx_name].combinations.keys())
-        result_list = list(combo_cards[onyx_name].combinations.values())
-        for j in range(0, len(names_list)):
-            x = names_list[j] + ":Onyx"
             combo_cards[onyx_name].addCombo(x, result_list[j])
     return combo_card_names, combo_cards
 

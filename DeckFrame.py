@@ -21,10 +21,11 @@ _ = gettext.gettext
 class DeckFrame ( wx.Frame ):
 
     def __init__( self, parent ):
-        wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = _(u"Little Alchemist Analyst"), pos = wx.DefaultPosition, size = wx.Size( 800,700 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MINIMIZE_BOX|wx.TAB_TRAVERSAL )
+        wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = _(u"Little Alchemist Analyst"), pos = wx.DefaultPosition, size = wx.Size( 875,700 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MINIMIZE_BOX|wx.TAB_TRAVERSAL )
 
         self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
-        self.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOW ) )
+        self.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_WINDOW ) )
+        self.SetBackgroundColour( wx.Colour( 191, 113, 223 ) )
 
         bSizer4 = wx.BoxSizer( wx.VERTICAL )
 
@@ -32,7 +33,7 @@ class DeckFrame ( wx.Frame ):
 
         bSizer2.SetMinSize( wx.Size( -1,250 ) )
 
-        bSizer2.Add( ( 300, 0), 0, wx.EXPAND, 5 )
+        bSizer2.Add( ( 350, 0), 0, wx.EXPAND, 5 )
 
         self.card_library_button = wx.Button( self, wx.ID_ANY, _(u"Card Library"), wx.DefaultPosition, wx.DefaultSize, 0 )
         bSizer2.Add( self.card_library_button, 0, wx.ALL, 5 )
@@ -50,6 +51,7 @@ class DeckFrame ( wx.Frame ):
         self.m_staticText1.Wrap( -1 )
 
         self.m_staticText1.SetFont( wx.Font( 19, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
+        self.m_staticText1.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNTEXT ) )
 
         bSizer4.Add( self.m_staticText1, 0, wx.ALL, 5 )
 
@@ -85,6 +87,7 @@ class DeckFrame ( wx.Frame ):
         self.m_staticText8.Wrap( -1 )
 
         self.m_staticText8.SetFont( wx.Font( 15, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
+        self.m_staticText8.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNTEXT ) )
 
         bSizer12.Add( self.m_staticText8, 0, wx.ALL, 5 )
 
@@ -106,6 +109,7 @@ class DeckFrame ( wx.Frame ):
         self.m_staticText9.Wrap( -1 )
 
         self.m_staticText9.SetFont( wx.Font( 15, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
+        self.m_staticText9.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNTEXT ) )
 
         bSizer12.Add( self.m_staticText9, 0, wx.ALL, 5 )
 
@@ -146,6 +150,7 @@ class DeckFrame ( wx.Frame ):
         self.m_staticText10.Wrap( -1 )
 
         self.m_staticText10.SetFont( wx.Font( 15, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
+        self.m_staticText10.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNTEXT ) )
 
         gbSizer1.Add( self.m_staticText10, wx.GBPosition( 6, 0 ), wx.GBSpan( 1, 1 ), wx.ALL, 5 )
 
@@ -160,6 +165,8 @@ class DeckFrame ( wx.Frame ):
         self.m_staticText2 = wx.StaticText( self, wx.ID_ANY, _(u"Combo Card:"), wx.DefaultPosition, wx.DefaultSize, 0 )
         self.m_staticText2.Wrap( -1 )
 
+        self.m_staticText2.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNTEXT ) )
+
         bSizer41.Add( self.m_staticText2, 0, wx.ALL, 5 )
 
 
@@ -172,6 +179,8 @@ class DeckFrame ( wx.Frame ):
 
         self.m_staticText3 = wx.StaticText( self, wx.ID_ANY, _(u"Level:"), wx.DefaultPosition, wx.DefaultSize, 0 )
         self.m_staticText3.Wrap( -1 )
+
+        self.m_staticText3.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNTEXT ) )
 
         bSizer5.Add( self.m_staticText3, 0, wx.ALL, 5 )
 
@@ -186,6 +195,8 @@ class DeckFrame ( wx.Frame ):
         self.m_staticText4 = wx.StaticText( self, wx.ID_ANY, _(u"Fusion:"), wx.DefaultPosition, wx.DefaultSize, 0 )
         self.m_staticText4.Wrap( -1 )
 
+        self.m_staticText4.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNTEXT ) )
+
         bSizer6.Add( self.m_staticText4, 0, wx.ALL, 5 )
 
 
@@ -198,6 +209,8 @@ class DeckFrame ( wx.Frame ):
 
         self.m_staticText41 = wx.StaticText( self, wx.ID_ANY, _(u"Amount:"), wx.DefaultPosition, wx.DefaultSize, 0 )
         self.m_staticText41.Wrap( -1 )
+
+        self.m_staticText41.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNTEXT ) )
 
         bSizer61.Add( self.m_staticText41, 0, wx.ALL, 5 )
 
@@ -213,11 +226,15 @@ class DeckFrame ( wx.Frame ):
         self.m_staticText7.Wrap( -1 )
 
         self.m_staticText7.SetFont( wx.Font( 15, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
+        self.m_staticText7.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNTEXT ) )
 
         bSizer10.Add( self.m_staticText7, 0, wx.ALL, 5 )
 
 
         gbSizer1.Add( bSizer10, wx.GBPosition( 4, 0 ), wx.GBSpan( 1, 1 ), wx.EXPAND, 5 )
+
+
+        gbSizer1.Add( ( 0, 0 ), wx.GBPosition( 0, 3 ), wx.GBSpan( 1, 1 ), wx.EXPAND, 5 )
 
 
         bSizer12.Add( gbSizer1, 1, wx.EXPAND, 5 )

@@ -21,9 +21,10 @@ _ = gettext.gettext
 class TestDeckFrame ( wx.Frame ):
 
     def __init__( self, parent ):
-        wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = _(u"Little Alchemist Analyst"), pos = wx.DefaultPosition, size = wx.Size( 800,700 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MINIMIZE_BOX|wx.TAB_TRAVERSAL )
+        wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = _(u"Little Alchemist Analyst"), pos = wx.DefaultPosition, size = wx.Size( 875,700 ), style = wx.CAPTION|wx.CLOSE_BOX|wx.MINIMIZE_BOX|wx.TAB_TRAVERSAL )
 
         self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
+        self.SetBackgroundColour( wx.Colour( 191, 113, 223 ) )
 
         bSizer32 = wx.BoxSizer( wx.VERTICAL )
 
@@ -31,7 +32,7 @@ class TestDeckFrame ( wx.Frame ):
 
         bSizer2.SetMinSize( wx.Size( -1,50 ) )
 
-        bSizer2.Add( ( 300, 0), 0, wx.EXPAND, 5 )
+        bSizer2.Add( ( 350, 0), 0, wx.EXPAND, 5 )
 
         self.card_library_button = wx.Button( self, wx.ID_ANY, _(u"Card Library"), wx.DefaultPosition, wx.DefaultSize, 0 )
         bSizer2.Add( self.card_library_button, 0, wx.ALL, 5 )
@@ -49,7 +50,7 @@ class TestDeckFrame ( wx.Frame ):
 
         bSizer13.SetMinSize( wx.Size( -1,100 ) )
 
-        bSizer13.Add( ( 310, 0), 0, wx.EXPAND, 5 )
+        bSizer13.Add( ( 360, 0), 0, wx.EXPAND, 5 )
 
         self.deck_1_button = wx.Button( self, wx.ID_ANY, _(u"Deck 1"), wx.DefaultPosition, wx.DefaultSize, 0 )
         bSizer13.Add( self.deck_1_button, 0, wx.ALL, 5 )
@@ -72,11 +73,14 @@ class TestDeckFrame ( wx.Frame ):
         self.m_staticText23.Wrap( -1 )
 
         self.m_staticText23.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
+        self.m_staticText23.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNTEXT ) )
 
         bSizer46.Add( self.m_staticText23, 0, wx.ALL, 5 )
 
         self.m_staticText33 = wx.StaticText( self, wx.ID_ANY, _(u"Level:"), wx.DefaultPosition, wx.DefaultSize, 0 )
         self.m_staticText33.Wrap( -1 )
+
+        self.m_staticText33.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNTEXT ) )
 
         bSizer46.Add( self.m_staticText33, 0, wx.ALL, 5 )
 
@@ -87,6 +91,8 @@ class TestDeckFrame ( wx.Frame ):
 
         self.m_staticText34 = wx.StaticText( self, wx.ID_ANY, _(u"Fusion:"), wx.DefaultPosition, wx.DefaultSize, 0 )
         self.m_staticText34.Wrap( -1 )
+
+        self.m_staticText34.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNTEXT ) )
 
         bSizer46.Add( self.m_staticText34, 0, wx.ALL, 5 )
 
@@ -106,6 +112,8 @@ class TestDeckFrame ( wx.Frame ):
         self.m_staticText24 = wx.StaticText( self, wx.ID_ANY, _(u"Atk:"), wx.DefaultPosition, wx.DefaultSize, 0 )
         self.m_staticText24.Wrap( -1 )
 
+        self.m_staticText24.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNTEXT ) )
+
         bSizer39.Add( self.m_staticText24, 0, wx.ALL, 5 )
 
         self.attack_txtctrl = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 70,-1 ), 0 )
@@ -114,6 +122,8 @@ class TestDeckFrame ( wx.Frame ):
         self.m_staticText25 = wx.StaticText( self, wx.ID_ANY, _(u"Def:"), wx.DefaultPosition, wx.DefaultSize, 0 )
         self.m_staticText25.Wrap( -1 )
 
+        self.m_staticText25.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNTEXT ) )
+
         bSizer39.Add( self.m_staticText25, 0, wx.ALL, 5 )
 
         self.defense_txtctrl = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 70,-1 ), 0 )
@@ -121,6 +131,8 @@ class TestDeckFrame ( wx.Frame ):
 
         self.m_staticText26 = wx.StaticText( self, wx.ID_ANY, _(u"Ability:"), wx.DefaultPosition, wx.DefaultSize, 0 )
         self.m_staticText26.Wrap( -1 )
+
+        self.m_staticText26.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNTEXT ) )
 
         bSizer39.Add( self.m_staticText26, 0, wx.ALL, 5 )
 
@@ -144,6 +156,7 @@ class TestDeckFrame ( wx.Frame ):
         self.m_staticText27.Wrap( -1 )
 
         self.m_staticText27.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
+        self.m_staticText27.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNTEXT ) )
 
         bSizer41.Add( self.m_staticText27, 0, wx.ALL, 5 )
 
@@ -165,6 +178,7 @@ class TestDeckFrame ( wx.Frame ):
         self.deck_txt.Wrap( -1 )
 
         self.deck_txt.SetFont( wx.Font( 16, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
+        self.deck_txt.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNTEXT ) )
 
         bSizer42.Add( self.deck_txt, 0, wx.ALL, 5 )
 
@@ -201,6 +215,7 @@ class TestDeckFrame ( wx.Frame ):
         self.m_staticText29.Wrap( -1 )
 
         self.m_staticText29.SetFont( wx.Font( wx.NORMAL_FONT.GetPointSize(), wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
+        self.m_staticText29.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNTEXT ) )
 
         bSizer43.Add( self.m_staticText29, 0, wx.ALL, 5 )
 
@@ -211,6 +226,8 @@ class TestDeckFrame ( wx.Frame ):
 
         self.m_staticText30 = wx.StaticText( self, wx.ID_ANY, _(u"Number of Simulations:"), wx.DefaultPosition, wx.DefaultSize, 0 )
         self.m_staticText30.Wrap( -1 )
+
+        self.m_staticText30.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNTEXT ) )
 
         bSizer43.Add( self.m_staticText30, 0, wx.ALL, 5 )
 
@@ -227,6 +244,8 @@ class TestDeckFrame ( wx.Frame ):
 
         self.m_staticText31 = wx.StaticText( self, wx.ID_ANY, _(u"Final Form Preference:"), wx.DefaultPosition, wx.DefaultSize, 0 )
         self.m_staticText31.Wrap( -1 )
+
+        self.m_staticText31.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNTEXT ) )
 
         bSizer44.Add( self.m_staticText31, 0, wx.ALL, 5 )
 
@@ -253,6 +272,7 @@ class TestDeckFrame ( wx.Frame ):
         self.m_staticText32.Wrap( -1 )
 
         self.m_staticText32.SetFont( wx.Font( 16, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
+        self.m_staticText32.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNTEXT ) )
 
         bSizer45.Add( self.m_staticText32, 0, wx.ALL, 5 )
 

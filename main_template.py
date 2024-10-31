@@ -450,23 +450,25 @@ class LittleAlchemistAnalyst(DeckFrame):
             for i in range(0, len(deck_library)):
                 score = 0
                 for j in range(0, len(deck_library)):
-                    if i != j:
-                        if deck_library[i][0] in self.all_combo_cards[deck_library[j][0]].combinations:
-                            result = self.all_combo_cards[deck_library[j][0]].combinations[deck_library[i][0]]
-                            attack = self.all_base_cards[result].attack
-                            defense = self.all_base_cards[result].defense
-                            rarity = self.all_base_cards[result].rarity
-                            attack, defense = self.determine_level_stats(attack, defense, rarity, deck_library[i]
-                                                                         , deck_library[j])
-                            if choice == 'Attack':
-                                score = score + attack
-                            elif choice == 'Defense':
-                                score = score + defense
-                            elif choice == 'Total Stat':
-                                score = score + attack + defense
-                            else:
-                                percentage = float(self.frames[1].custom_percentage.GetValue())/100
-                                score = score + (attack*percentage + defense*(1-percentage))
+                    if i == j:
+                        if deck_library[i][3] <= 1:
+                            continue
+                    if deck_library[i][0] in self.all_combo_cards[deck_library[j][0]].combinations:
+                        result = self.all_combo_cards[deck_library[j][0]].combinations[deck_library[i][0]]
+                        attack = self.all_base_cards[result].attack
+                        defense = self.all_base_cards[result].defense
+                        rarity = self.all_base_cards[result].rarity
+                        attack, defense = self.determine_level_stats(attack, defense, rarity, deck_library[i]
+                                                                     , deck_library[j])
+                        if choice == 'Attack':
+                            score = score + attack
+                        elif choice == 'Defense':
+                            score = score + defense
+                        elif choice == 'Total Stat':
+                            score = score + attack + defense
+                        else:
+                            percentage = float(self.frames[1].custom_percentage.GetValue())/100
+                            score = score + (attack*percentage + defense*(1-percentage))
                 if score > max_score:
                     max_score = score
                     max_index = i
@@ -750,9 +752,16 @@ class LittleAlchemistAnalyst(DeckFrame):
     def add_final_form(self, event):
         attack = self.frames[2].attack_txtctrl.GetValue()
         defense = self.frames[2].defense_txtctrl.GetValue()
-        level = int(self.frames[2].level_choice.GetStringSelection())
+        level = self.frames[2].level_choice.GetStringSelection()
+        if not level.isnumeric():
+            wx.MessageBox("Invalid Level", "Invalid Input", wx.OK | wx.ICON_WARNING)
+            return
+        level = int(level)
         fusion = self.frames[2].fusion_choice.GetStringSelection()
         ability = self.frames[2].ability_choice.GetStringSelection()
+        if fusion == "" or ability == "":
+            wx.MessageBox("Invalid fusion or ability inputs", "Invalid Input", wx.OK | wx.ICON_WARNING)
+            return
         if (not attack.isnumeric()) or (not defense.isnumeric()):
             wx.MessageBox("Attack or Defense values are not valid", "Invalid Input", wx.OK | wx.ICON_WARNING)
             return
@@ -1352,7 +1361,10 @@ class LittleAlchemistAnalyst(DeckFrame):
     def deck_size_counter(self, deck_library):
         count = 0
         for i in range(0, len(deck_library)):
-            count = count + deck_library[i][3]
+            if deck_library[i][3] > 3:
+                count = count + 3
+            else:
+                count = count + deck_library[i][3]
         return count
 
     def find_attack_and_defense(self, name):
