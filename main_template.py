@@ -271,8 +271,13 @@ class LittleAlchemistAnalyst(DeckFrame):
 
     def add_card_to_library(self, event):
         card_name = self.card_name_choice.GetStringSelection()
-        card_level = int(self.card_level_choice.GetStringSelection())
+        card_level = self.card_level_choice.GetStringSelection()
         card_fusion = self.fusion_choice.GetStringSelection()
+        if card_name == "" or card_level == "" or card_fusion == "":
+            wx.MessageBox("No selection has been provided for either combo card, level or fusion status",
+                          "Invalid Input", wx.OK | wx.ICON_WARNING)
+            return
+        card_level = int(card_level)
         amount = self.card_amount.GetValue()
         if not amount.isnumeric():
             wx.MessageBox(f"'{amount}' is invalid\nEnter a valid amount", "Error", wx.OK | wx.ICON_WARNING)
@@ -295,6 +300,9 @@ class LittleAlchemistAnalyst(DeckFrame):
 
     def delete_card_from_library(self, event):
         card_name = self.delete_card_choice.GetStringSelection()
+        if card_name == "":
+            wx.MessageBox("No selection has been provided for card to be deleted", "Invalid Input", wx.OK | wx.ICON_WARNING)
+            return
         pattern = ':L|:F'
         attributes = re.split(pattern, card_name)
         for i in range(0, len(self.user_library)):
@@ -323,6 +331,9 @@ class LittleAlchemistAnalyst(DeckFrame):
 
     def optimize_deck(self, event):
         choice = self.frames[1].mode_choice.GetStringSelection()
+        if choice == "":
+            wx.MessageBox("No selection has been provided for optimization mode", "Invalid Input", wx.OK | wx.ICON_WARNING)
+            return
         if choice == 'Custom':
             if not self.frames[1].custom_percentage.GetValue().isnumeric() \
                     or int(self.frames[1].custom_percentage.GetValue()) > 100 \
@@ -333,7 +344,11 @@ class LittleAlchemistAnalyst(DeckFrame):
         if not self.frames[1].deck_size.GetValue().isnumeric():
             wx.MessageBox("Incorrect deck size value\nTry Again", "Incorrect Deck Size Input", wx.OK | wx.ICON_ERROR)
             return
-        deck_size = int(self.frames[1].deck_size.GetValue())
+        deck_size = self.frames[1].deck_size.GetValue()
+        if deck_size == "" or (not deck_size.isnumeric()):
+            wx.MessageBox("Invalid input for requested deck size", "Invalid Input", wx.OK | wx.ICON_WARNING)
+            return
+        deck_size = int(deck_size)
         number_cards = 0
         if self.current_deck == 1:
             number_cards = len(self.deck_1)
@@ -752,8 +767,11 @@ class LittleAlchemistAnalyst(DeckFrame):
     def add_final_form(self, event):
         attack = self.frames[2].attack_txtctrl.GetValue()
         defense = self.frames[2].defense_txtctrl.GetValue()
+        if (not attack.isnumeric()) or (attack == "") or (not defense.isnumeric()) or (defense == ""):
+            wx.MessageBox("Invalid attack or defense inputs", "Invalid Input", wx.OK | wx.ICON_WARNING)
+            return
         level = self.frames[2].level_choice.GetStringSelection()
-        if not level.isnumeric():
+        if level == "" or (not level.isnumeric()):
             wx.MessageBox("Invalid Level", "Invalid Input", wx.OK | wx.ICON_WARNING)
             return
         level = int(level)
@@ -784,6 +802,9 @@ class LittleAlchemistAnalyst(DeckFrame):
 
     def remove_final_form(self, event):
         final_form = self.frames[2].remove_final_choice.GetStringSelection()
+        if final_form == "":
+            wx.MessageBox("No final form has been selected", "Invalid Input", wx.OK | wx.ICON_WARNING)
+            return
         if self.current_test_deck == 1:
             for i in range(0, len(self.test_deck_1)):
                 if self.test_deck_1[i][0] == final_form:
@@ -817,6 +838,10 @@ class LittleAlchemistAnalyst(DeckFrame):
 
         mode = self.frames[2].mode_choice.GetStringSelection()
         final_form_preference = self.frames[2].final_preference_choice.GetStringSelection()
+        if mode == "" or final_form_preference == "":
+            wx.MessageBox("No selection has been provided for simulation mode or final form preference",
+                          "Invalid Input", wx.OK | wx.ICON_WARNING)
+            return
         number_simulations = self.frames[2].number_simulations_txtctrl.GetValue()
         if not number_simulations.isnumeric():
             wx.MessageBox("Invalid number of simulations", "Invalid Input", wx.OK | wx.ICON_WARNING)

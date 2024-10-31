@@ -46,9 +46,25 @@ class TestDeckFrame ( wx.Frame ):
 
         bSizer32.Add( bSizer2, 0, wx.EXPAND, 5 )
 
+        bSizer47 = wx.BoxSizer( wx.HORIZONTAL )
+
+
+        bSizer47.Add( ( 450, 0), 0, wx.EXPAND, 5 )
+
+        self.m_staticText43 = wx.StaticText( self, wx.ID_ANY, _(u"Test Deck"), wx.DefaultPosition, wx.DefaultSize, 0 )
+        self.m_staticText43.Wrap( -1 )
+
+        self.m_staticText43.SetFont( wx.Font( 19, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_BOLD, False, wx.EmptyString ) )
+        self.m_staticText43.SetForegroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_BTNTEXT ) )
+
+        bSizer47.Add( self.m_staticText43, 0, wx.ALL, 5 )
+
+
+        bSizer32.Add( bSizer47, 0, wx.EXPAND, 5 )
+
         bSizer13 = wx.BoxSizer( wx.HORIZONTAL )
 
-        bSizer13.SetMinSize( wx.Size( -1,100 ) )
+        bSizer13.SetMinSize( wx.Size( -1,85 ) )
 
         bSizer13.Add( ( 360, 0), 0, wx.EXPAND, 5 )
 
