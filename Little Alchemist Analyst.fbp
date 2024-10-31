@@ -70,7 +70,7 @@
           <property name="flag">wxEXPAND</property>
           <property name="proportion">0</property>
           <object class="wxBoxSizer" expanded="true">
-            <property name="minimum_size">-1,250</property>
+            <property name="minimum_size">-1,270</property>
             <property name="name">bSizer2</property>
             <property name="orient">wxHORIZONTAL</property>
             <property name="permission">none</property>

@@ -31,7 +31,7 @@ class DeckFrame ( wx.Frame ):
 
         bSizer2 = wx.BoxSizer( wx.HORIZONTAL )
 
-        bSizer2.SetMinSize( wx.Size( -1,250 ) )
+        bSizer2.SetMinSize( wx.Size( -1,270 ) )
 
         bSizer2.Add( ( 350, 0), 0, wx.EXPAND, 5 )
 
