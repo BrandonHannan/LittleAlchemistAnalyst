@@ -50,8 +50,8 @@
       <property name="minimum_size"></property>
       <property name="name">DeckFrame</property>
       <property name="pos"></property>
-      <property name="size">875,750</property>
-      <property name="style">wxCAPTION|wxCLOSE_BOX|wxMINIMIZE_BOX</property>
+      <property name="size">875,700</property>
+      <property name="style">wxCAPTION|wxCLOSE_BOX|wxMINIMIZE_BOX|wxRESIZE_BORDER|wxSTAY_ON_TOP</property>
       <property name="subclass">; ; forward_declare</property>
       <property name="title">Little Alchemist Analyst</property>
       <property name="tooltip"></property>
@@ -1887,8 +1887,8 @@
       <property name="minimum_size"></property>
       <property name="name">OptimizeDeckFrame</property>
       <property name="pos"></property>
-      <property name="size">875,750</property>
-      <property name="style">wxCAPTION|wxCLOSE_BOX|wxMINIMIZE_BOX</property>
+      <property name="size">875,700</property>
+      <property name="style">wxCAPTION|wxCLOSE_BOX|wxMINIMIZE_BOX|wxRESIZE_BORDER|wxSTAY_ON_TOP</property>
       <property name="subclass">; ; forward_declare</property>
       <property name="title">Little Alchemist Analyst</property>
       <property name="tooltip"></property>
@@ -4583,8 +4583,8 @@
       <property name="minimum_size"></property>
       <property name="name">TestDeckFrame</property>
       <property name="pos"></property>
-      <property name="size">875,750</property>
-      <property name="style">wxCAPTION|wxCLOSE_BOX|wxMINIMIZE_BOX</property>
+      <property name="size">875,700</property>
+      <property name="style">wxCAPTION|wxCLOSE_BOX|wxMINIMIZE_BOX|wxRESIZE_BORDER|wxSTAY_ON_TOP</property>
       <property name="subclass">; ; forward_declare</property>
       <property name="title">Little Alchemist Analyst</property>
       <property name="tooltip"></property>

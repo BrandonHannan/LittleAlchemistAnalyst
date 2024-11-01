@@ -3,17 +3,17 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDisplayName</key>
-	<string>main_template</string>
+	<string>Little Alchemist Analyst</string>
 	<key>CFBundleExecutable</key>
-	<string>main_template</string>
+	<string>Little Alchemist Analyst</string>
 	<key>CFBundleIconFile</key>
 	<string>app_icon.icns</string>
 	<key>CFBundleIdentifier</key>
-	<string>main_template</string>
+	<string>Little Alchemist Analyst</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>main_template</string>
+	<string>Little Alchemist Analyst</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
