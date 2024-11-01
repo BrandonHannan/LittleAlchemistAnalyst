@@ -32,7 +32,7 @@ class TestDeckFrame ( wx.Frame ):
 
         bSizer2.SetMinSize( wx.Size( -1,50 ) )
 
-        bSizer2.Add( ( 350, 0), 0, wx.EXPAND, 5 )
+        bSizer2.Add( ( 500, 0), 0, wx.EXPAND, 5 )
 
         self.card_library_button = wx.Button( self, wx.ID_ANY, _(u"Card Library"), wx.DefaultPosition, wx.DefaultSize, 0 )
         bSizer2.Add( self.card_library_button, 0, wx.ALL, 5 )
@@ -49,7 +49,7 @@ class TestDeckFrame ( wx.Frame ):
         bSizer47 = wx.BoxSizer( wx.HORIZONTAL )
 
 
-        bSizer47.Add( ( 450, 0), 0, wx.EXPAND, 5 )
+        bSizer47.Add( ( 600, 0), 0, wx.EXPAND, 5 )
 
         self.m_staticText43 = wx.StaticText( self, wx.ID_ANY, _(u"Test Deck"), wx.DefaultPosition, wx.DefaultSize, 0 )
         self.m_staticText43.Wrap( -1 )
@@ -66,7 +66,7 @@ class TestDeckFrame ( wx.Frame ):
 
         bSizer13.SetMinSize( wx.Size( -1,85 ) )
 
-        bSizer13.Add( ( 360, 0), 0, wx.EXPAND, 5 )
+        bSizer13.Add( ( 510, 0), 0, wx.EXPAND, 5 )
 
         self.deck_1_button = wx.Button( self, wx.ID_ANY, _(u"Deck 1"), wx.DefaultPosition, wx.DefaultSize, 0 )
         bSizer13.Add( self.deck_1_button, 0, wx.ALL, 5 )

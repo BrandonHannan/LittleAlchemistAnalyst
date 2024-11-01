@@ -33,7 +33,7 @@ class DeckFrame ( wx.Frame ):
 
         bSizer2.SetMinSize( wx.Size( -1,270 ) )
 
-        bSizer2.Add( ( 350, 0), 0, wx.EXPAND, 5 )
+        bSizer2.Add( ( 500, 0), 0, wx.EXPAND, 5 )
 
         self.card_library_button = wx.Button( self, wx.ID_ANY, _(u"Card Library"), wx.DefaultPosition, wx.DefaultSize, 0 )
         bSizer2.Add( self.card_library_button, 0, wx.ALL, 5 )
